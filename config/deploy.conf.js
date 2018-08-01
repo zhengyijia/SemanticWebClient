@@ -1,7 +1,7 @@
 module.exports = {
     version: '1.0.0',
     ssh: {
-        host: 'xxx.xxx.xxx.xxx', //可以配置多台服务器
+        host: 'xxx.xxx.xxx.xxxx', //可以配置多台服务器
         port: 22,
         username: 'xxxx',
         password: 'xxxx'
