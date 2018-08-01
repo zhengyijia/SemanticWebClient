@@ -23,4 +23,4 @@ yarn-error.log*
 # log
 /logs
 
-/config/deploy.conf.js
+config/deploy.conf.js
