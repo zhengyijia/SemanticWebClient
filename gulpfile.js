@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var GulpSSH = require('gulp-ssh');
 //载入配置文件
-var config = require('./config/deploy.conf.js');
+var config = require('./conf/deploy.conf.js');
 console.log(config)
 var sshConfig = config.ssh;
 //打开ssh通道
