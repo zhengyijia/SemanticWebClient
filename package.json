@@ -7,7 +7,9 @@
     "antd": "^3.7.2",
     "axios": "^0.18.0",
     "mobx": "^5.0.3",
+    "mobx-react": "^5.2.3",
     "react": "^16.4.1",
+    "react-app-rewire-mobx": "^1.0.8",
     "react-cookies": "^0.1.0",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -18,15 +20,16 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "gulp default"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-less": "^4.0.1",
-    "gulp-ssh": "^0.7.0"
+    "gulp-ssh": "^0.7.0",
+    "react-app-rewired": "^1.5.2"
   }
 }

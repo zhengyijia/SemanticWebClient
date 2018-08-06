@@ -5,8 +5,10 @@ class Header extends Component {
 
     render() {
         return (
-            <div>
-            	<p>语义网客户端</p>
+            <div id='header-bar'>
+            	<hr/>
+            	语义网客户端<br/>
+            	<hr/>
             </div>
         )
     }
