@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Route, BrowserRouter, Redirect, Switch} from 'react-router-dom'
+import  conf from './conf'
 
 import Header from './components/header'
 import Login from './components/login'
@@ -11,7 +12,7 @@ class Routes extends Component {
 		return (
 			<div>
 				<Header/>
-				<BrowserRouter basename='/semanticweb-client'>
+				<BrowserRouter basename={conf.basename}>
 					<div>
 						<Switch>
 							<Route path="/login" component={Login} />

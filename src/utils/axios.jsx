@@ -1,15 +1,19 @@
 import axios from 'axios';
 import cookie from 'react-cookies';
+import conf from '../conf'
 
-axios.defaults.baseURL = 'http://localhost:8080/';
+axios.defaults.baseURL = conf.baseURL;
+axios.defaults.timeout = 5000
 
 axios.interceptors.request.use(config => {
     let token = cookie.load('token');
-    if (token !== null) {
-    	config.header = {
-    		...config.header, 
-    		Authorization: token
-    	}
+    if (token !== undefined) {
+        // config.headers.common.Authorization = token;
+    	// config.headers.common = {
+    	// 	...config.headers.common, 
+    	// 	Authorization: token
+    	// }
+        config.headers.common['Authorization'] = token;
     }
     return config;
 }, error => {
