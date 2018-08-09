@@ -197,7 +197,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div id='main_box'>
                 <QueryBox query={this.query}/>
                 <ResultTable state={this.state.query_state} result={this.state.query_result}/>
             </div>

@@ -1,13 +1,8 @@
 import './index.css';
 import React, { Component } from 'react';
-import { inject, observer } from "mobx-react";
 import axios from '../../utils/axios';
 import cookie from 'react-cookies'
 
-@inject(stores => ({
-    store: stores.login
-}))
-@observer
 class Login extends Component {
 
     // 构造函数
@@ -15,6 +10,8 @@ class Login extends Component {
         super(props);
 
         this.state = {
+            username: "admin", 
+            password: "admin",
             login_info: ""
         }
 
@@ -24,17 +21,20 @@ class Login extends Component {
     }
 
     usernameChange(e) {
-        this.props.store.setUsername(e.target.value);
+        this.setState({
+            username: e.target.value
+        })
     }
 
     passwordChange(e) {
-        this.props.store.setPassword(e.target.value)
+        this.setState({
+            password: e.target.value
+        })
     }
 
     onLoginClick() {
-        let { store } = this.props; 
-        let username = store.username; 
-        let password = store.password; 
+        let username = this.state.username; 
+        let password = this.state.password; 
         
         this.setState({
             login_info: "登录中"
@@ -63,13 +63,12 @@ class Login extends Component {
     }
 
     render() {
-        const { store } = this.props;
 
         return (
             <div>
                 admin/admin<br/>
-                用户名：<input type="text" id="username" value={store.username} onChange={this.usernameChange} /><br/>
-                密码：<input type="password" id="password" value={store.password} onChange={this.passwordChange} /><br/>
+                用户名：<input type="text" id="username" value={this.state.username} onChange={this.usernameChange} /><br/>
+                密码：<input type="password" id="password" value={this.state.password} onChange={this.passwordChange} /><br/>
                 <button onClick={this.onLoginClick}>登录</button><br/>
                 <span>{this.state.login_info}</span>
             </div>
